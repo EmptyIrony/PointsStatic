@@ -1,0 +1,3 @@
+claimed: "你已经领取过这个奖励了"
+claim_success: "领取成功"
+not_enough: "不足, 你有 {0}, 需要 {1}"

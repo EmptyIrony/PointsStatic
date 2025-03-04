@@ -1,0 +1,22 @@
+# id名
+a:
+  # 时间生效范围
+  time: ALL
+  # http://daokeyou.top/
+  # 时间范围生效
+  # time: "1740321620146-1740301620146"
+  rewards:
+    1:
+      need: 1000
+      icon:
+        name: "累充xx元"
+        lore:
+          - "奖励你:"
+          - " xxx"
+        claimed_lore:
+          - "奖励你"
+        unreached_lore:
+          - "不够"
+        material: CHEST
+      rewards:
+        - "give %player% diamond"

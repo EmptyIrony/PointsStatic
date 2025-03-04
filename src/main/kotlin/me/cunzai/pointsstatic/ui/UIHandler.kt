@@ -40,7 +40,8 @@ object UIHandler {
         submitChain {
             val total = MySQLHandler.getPointsTotal(player.name, MySQLHandler.server, rewardsConfig.timeRange)
 
-            val claimed = MySQLHandler.claimedCache[player.name]?.get(node) ?: hashSetOf()
+            val cacheMap = MySQLHandler.claimedCache[player.name] ?: return@submitChain
+            val claimed = cacheMap[node] ?: hashSetOf()
 
             sync {
                 player.openMenu<Chest>("累充奖励 - $node") {
@@ -76,6 +77,8 @@ object UIHandler {
                                 player.sendLang("claimed")
                                 return@set
                             }
+
+                            cacheMap[node] = claimed
 
                             player.save()
 
